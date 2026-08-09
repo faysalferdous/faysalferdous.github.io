@@ -12,6 +12,7 @@
   <meta property="og:image" content="https://faysalferdous.github.io/assets/og-preview.png">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <title>Faysal Ferdous | Cybersecurity Portfolio</title>
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
@@ -44,9 +45,9 @@
 
   <main>
     <section id="home" class="hero shell">
-      <div class="hero-copy reveal">
+      <div class="hero-copy">
         <p class="eyebrow">CYBERSECURITY PORTFOLIO</p>
-        <h1>Faysal <span>Ferdous</span></h1>
+        <h1 class="title-animate title-main" data-title-delay="120">Faysal <span>Ferdous</span></h1>
         <p class="role">SOC <b>|</b> Digital Forensics <b>|</b> Security Research</p>
         <p class="lead">Cybersecurity learner and practitioner focused on structured investigation, evidence-driven analysis, practical security labs and continuous technical development.</p>
 
@@ -63,7 +64,7 @@
         </div>
       </div>
 
-      <div class="terminal reveal" aria-label="Decorative security operations terminal">
+      <div class="terminal" aria-label="Decorative security operations terminal">
         <div class="terminal-header"><i></i><i></i><i></i><small>security-operations.sh</small></div>
         <div class="terminal-body">
           <p><em>$</em> whoami</p>
@@ -81,13 +82,13 @@
 
     <section id="about" class="section section-panel">
       <div class="shell">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="eyebrow">ABOUT</p>
-          <h2>Protect. Investigate. Improve.</h2>
+          <h2 class="title-animate title-section">Protect. Investigate. Improve.</h2>
         </div>
 
         <div class="about-grid">
-          <div class="about-copy reveal">
+          <div class="about-copy">
             <p>I work across security operations, digital forensics, Android forensics, Linux, web security and practical CTF environments. My approach prioritizes evidence preservation, repeatable analysis and clear technical reporting.</p>
             <p>This portfolio brings together my public projects, professional profiles and completed training credentials.</p>
 
@@ -99,13 +100,13 @@
             </dl>
           </div>
 
-          <div class="identity-card reveal">
+          <div class="identity-card">
             <img src="assets/profile-placeholder.svg" alt="Abstract digital identity illustration">
             <span class="identity-label"><b></b> Cybersecurity Portfolio</span>
           </div>
         </div>
 
-        <div class="highlights reveal">
+        <div class="highlights">
           <article><strong>8</strong><span>Published Credentials</span></article>
           <article><strong>SOC</strong><span>Security Operations</span></article>
           <article><strong>DFIR</strong><span>Digital Forensics</span></article>
@@ -115,33 +116,33 @@
     </section>
 
     <section id="skills" class="section shell">
-      <div class="section-heading reveal">
+      <div class="section-heading">
         <p class="eyebrow">CAPABILITIES</p>
-        <h2>Technical focus areas</h2>
+        <h2 class="title-animate title-section">Technical focus areas</h2>
       </div>
       <div class="skill-grid">
-        <article class="skill-card reveal"><span>01</span><h3>SOC &amp; SIEM</h3><p>Alert triage, log analysis, detection context and evidence-based investigation.</p></article>
-        <article class="skill-card reveal"><span>02</span><h3>Digital Forensics</h3><p>Disk, memory, timeline and artifact analysis with preservation-first workflows.</p></article>
-        <article class="skill-card reveal"><span>03</span><h3>Android Forensics</h3><p>APK review, application artifacts, permissions and mobile evidence analysis.</p></article>
-        <article class="skill-card reveal"><span>04</span><h3>Threat Hunting</h3><p>Hypothesis-led investigation using behavior, indicators and contextual evidence.</p></article>
-        <article class="skill-card reveal"><span>05</span><h3>Linux Security</h3><p>System investigation, command-line workflows, Bash and defensive administration.</p></article>
-        <article class="skill-card reveal"><span>06</span><h3>Web Security</h3><p>HTTP analysis, OWASP concepts, controlled testing and finding validation.</p></article>
-        <article class="skill-card reveal"><span>07</span><h3>Incident Response</h3><p>Scoping, evidence collection, analysis, containment context and reporting.</p></article>
-        <article class="skill-card reveal"><span>08</span><h3>Security Automation</h3><p>Python, Bash and AI-assisted workflows for repeatable security tasks.</p></article>
+        <article class="skill-card"><span>01</span><h3>SOC &amp; SIEM</h3><p>Alert triage, log analysis, detection context and evidence-based investigation.</p></article>
+        <article class="skill-card"><span>02</span><h3>Digital Forensics</h3><p>Disk, memory, timeline and artifact analysis with preservation-first workflows.</p></article>
+        <article class="skill-card"><span>03</span><h3>Android Forensics</h3><p>APK review, application artifacts, permissions and mobile evidence analysis.</p></article>
+        <article class="skill-card"><span>04</span><h3>Threat Hunting</h3><p>Hypothesis-led investigation using behavior, indicators and contextual evidence.</p></article>
+        <article class="skill-card"><span>05</span><h3>Linux Security</h3><p>System investigation, command-line workflows, Bash and defensive administration.</p></article>
+        <article class="skill-card"><span>06</span><h3>Web Security</h3><p>HTTP analysis, OWASP concepts, controlled testing and finding validation.</p></article>
+        <article class="skill-card"><span>07</span><h3>Incident Response</h3><p>Scoping, evidence collection, analysis, containment context and reporting.</p></article>
+        <article class="skill-card"><span>08</span><h3>Security Automation</h3><p>Python, Bash and AI-assisted workflows for repeatable security tasks.</p></article>
       </div>
     </section>
 
     
     <section id="projects" class="section section-panel">
       <div class="shell">
-        <div class="section-heading heading-row reveal">
-          <div><p class="eyebrow">PROJECTS</p><h2>Public technical work</h2></div>
+        <div class="section-heading heading-row">
+          <div><p class="eyebrow">PROJECTS</p><h2 class="title-animate title-section">Public technical work</h2></div>
           <a class="text-link" href="https://github.com/faysalferdous?tab=repositories" target="_blank" rel="noopener noreferrer">Browse all repositories →</a>
         </div>
 
        <div class="project-grid">
   <a
-    class="project-card reveal"
+    class="project-card"
     href="https://github.com/faysalferdous/DroidForensicX"
     target="_blank"
     rel="noopener noreferrer"
@@ -170,7 +171,7 @@
   </a>
 
   <a
-    class="project-card reveal"
+    class="project-card"
     href="https://github.com/faysalferdous/Pentadock"
     target="_blank"
     rel="noopener noreferrer"
@@ -199,7 +200,7 @@
   </a>
 
   <a
-    class="project-card reveal"
+    class="project-card"
     href="https://github.com/faysalferdous/access-control-system-design"
     target="_blank"
     rel="noopener noreferrer"
@@ -227,51 +228,52 @@
     </div>
   </a>
 </div>
+      </div>
     </section>
 
     <section id="credentials" class="section shell">
-      <div class="section-heading heading-row reveal">
-        <div><p class="eyebrow">CREDENTIALS</p><h2>Training &amp; certificates</h2></div>
+      <div class="section-heading heading-row">
+        <div><p class="eyebrow">CREDENTIALS</p><h2 class="title-animate title-section">Training &amp; certificates</h2></div>
         <p class="section-note">Select a card to open the original certificate.</p>
       </div>
 
       <div class="credential-grid">
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/byte-capsule-ethical-hacking-for-professionals.pdf" target="_blank"><img src="assets/thumbnails/byte-capsule-ethical-hacking-for-professionals.webp" alt="Ethical Hacking for Professionals certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">BYTE CAPSULE</span><h3>Ethical Hacking for Professionals</h3><p>Completed 7-month program · June 4, 2026</p><a href="assets/certificates/byte-capsule-ethical-hacking-for-professionals.pdf" target="_blank">View certificate →</a></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/intro-to-splunk.pdf" target="_blank"><img src="assets/thumbnails/intro-to-splunk.webp" alt="Intro to Splunk certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">SPLUNK</span><h3>Intro to Splunk (eLearning)</h3><p>Certificate of completion · January 3, 2026</p><a href="assets/certificates/intro-to-splunk.pdf" target="_blank">View certificate →</a></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/ibm-cybersecurity-analyst-professional-certificate.pdf" target="_blank"><img src="assets/thumbnails/ibm-cybersecurity-analyst-professional-certificate.webp" alt="IBM Cybersecurity Analyst certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">IBM · COURSERA</span><h3>IBM Cybersecurity Analyst</h3><p>Professional Certificate · October 18, 2023</p><div class="credential-actions"><a href="assets/certificates/ibm-cybersecurity-analyst-professional-certificate.pdf" target="_blank">View certificate</a><a href="https://coursera.org/verify/professional-cert/7HPFLDZ8D5M8" target="_blank" rel="noopener noreferrer">Verify →</a></div></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/google-cybersecurity-professional-certificate.pdf" target="_blank"><img src="assets/thumbnails/google-cybersecurity-professional-certificate.webp" alt="Google Cybersecurity certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">GOOGLE · COURSERA</span><h3>Google Cybersecurity</h3><p>Professional Certificate · July 5, 2023</p><div class="credential-actions"><a href="assets/certificates/google-cybersecurity-professional-certificate.pdf" target="_blank">View certificate</a><a href="https://coursera.org/verify/professional-cert/Q89Q3PTP26DT" target="_blank" rel="noopener noreferrer">Verify →</a></div></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/ec-council-network-defense-essentials.png" target="_blank"><img src="assets/thumbnails/ec-council-network-defense-essentials.webp" alt="Network Defense Essentials certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">EC-COUNCIL</span><h3>Network Defense Essentials (NDE)</h3><p>Certificate of Achievement · September 20, 2023</p><a href="assets/certificates/ec-council-network-defense-essentials.png" target="_blank">View certificate →</a></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/ec-council-ethical-hacking-essentials.png" target="_blank"><img src="assets/thumbnails/ec-council-ethical-hacking-essentials.webp" alt="Ethical Hacking Essentials certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">EC-COUNCIL</span><h3>Ethical Hacking Essentials (EHE)</h3><p>Certificate of Achievement · September 10, 2023</p><a href="assets/certificates/ec-council-ethical-hacking-essentials.png" target="_blank">View certificate →</a></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/python-data-structures.pdf" target="_blank"><img src="assets/thumbnails/python-data-structures.webp" alt="Python Data Structures certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">UNIVERSITY OF MICHIGAN · COURSERA</span><h3>Python Data Structures</h3><p>Course Certificate · July 25, 2023</p><div class="credential-actions"><a href="assets/certificates/python-data-structures.pdf" target="_blank">View certificate</a><a href="https://coursera.org/verify/FJP36VPAANBK" target="_blank" rel="noopener noreferrer">Verify →</a></div></div>
         </article>
 
-        <article class="credential-card reveal">
+        <article class="credential-card">
           <a class="credential-image" href="assets/certificates/arena-web-security-cyber-security.pdf" target="_blank"><img src="assets/thumbnails/arena-web-security-cyber-security.webp" alt="Arena Web Security certificate thumbnail"></a>
           <div class="credential-body"><span class="issuer">ARENA WEB SECURITY</span><h3>Cyber Security</h3><p>Certificate of Appreciation · December 24, 2023</p><a href="assets/certificates/arena-web-security-cyber-security.pdf" target="_blank">View certificate →</a></div>
         </article>
@@ -280,10 +282,10 @@
     
 <section id="achievements" class="section section-panel">
   <div class="shell">
-    <div class="section-heading heading-row reveal">
+    <div class="section-heading heading-row">
       <div>
         <p class="eyebrow">RECOGNITION</p>
-        <h2>Competition achievements</h2>
+        <h2 class="title-animate title-section">Competition achievements</h2>
       </div>
 
       <p class="section-note">
@@ -292,7 +294,7 @@
     </div>
 
     <div class="achievement-grid">
-      <article class="achievement-card reveal">
+      <article class="achievement-card">
         <a
           class="achievement-media"
           href="assets/achievements/crackmes-one-re-ctf-2026.png"
@@ -349,7 +351,7 @@
         </div>
       </article>
 
-      <article class="achievement-card reveal">
+      <article class="achievement-card">
         <a
           class="achievement-media"
           href="assets/achievements/htb-global-cyber-skills-benchmark-2026.pdf"
@@ -410,13 +412,13 @@
 </section>
     
     <section id="contact" class="contact shell section">
-      <div class="contact-copy reveal">
+      <div class="contact-copy">
         <p class="eyebrow">CONTACT</p>
-        <h2>Connect professionally.</h2>
+        <h2 class="title-animate title-section">Connect professionally.</h2>
         <p>For cybersecurity collaboration, technical discussions or professional networking, reach out through email or LinkedIn.</p>
         <div class="hero-actions"><a class="button button-primary" href="mailto:faysalferdous02@gmail.com">Send Email</a><a class="button button-outline" href="https://www.linkedin.com/in/faysalferdous20/" target="_blank" rel="noopener noreferrer">Open LinkedIn</a></div>
       </div>
-      <div class="contact-terminal reveal">
+      <div class="contact-terminal">
         <p><span>contact@portfolio</span>:<b>~</b>$ cat profiles.txt</p>
         <ul>
           <li>Email: faysalferdous02@gmail.com</li>
