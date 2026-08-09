@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10251a"/><stop offset="1" stop-color="#030604"/></linearGradient>
+    <radialGradient id="r"><stop stop-color="#8cff4a" stop-opacity=".22"/><stop offset="1" stop-color="#8cff4a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="800" rx="48" fill="url(#g)"/>
+  <rect width="800" height="800" rx="48" fill="url(#r)"/>
+  <g stroke="#8cff4a" opacity=".16">
+    <path d="M0 100h800M0 200h800M0 300h800M0 400h800M0 500h800M0 600h800M0 700h800"/>
+    <path d="M100 0v800M200 0v800M300 0v800M400 0v800M500 0v800M600 0v800M700 0v800"/>
+  </g>
+  <circle cx="400" cy="310" r="130" fill="#14231a" stroke="#8cff4a" stroke-width="4"/>
+  <path d="M190 735c21-164 95-255 210-255s189 91 210 255" fill="#14231a" stroke="#8cff4a" stroke-width="4"/>
+  <circle cx="400" cy="400" r="305" fill="none" stroke="#8cff4a" stroke-opacity=".25" stroke-width="3"/>
+  <text x="400" y="765" text-anchor="middle" fill="#8cff4a" font-family="monospace" font-size="22" letter-spacing="6">DIGITAL IDENTITY</text>
+</svg>
