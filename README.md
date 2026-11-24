@@ -1,6 +1,14 @@
 # Faysal Ferdous — Cybersecurity Portfolio
 
-Professional static cybersecurity portfolio prepared for GitHub Pages.
+[View the live portfolio](https://faysalferdous.github.io/)
+
+![Faysal Ferdous cybersecurity portfolio preview](assets/og-preview.png)
+
+## Featured projects
+
+- [DroidForensicX](https://github.com/faysalferdous/DroidForensicX) — Android forensic triage and reporting.
+- [Pentadock](https://github.com/faysalferdous/Pentadock) — isolated Linux security labs using Docker and Distrobox.
+- [Access Control System Design](https://github.com/faysalferdous/access-control-system-design) — access control architecture and security modeling.
 
 ## Included updates
 
