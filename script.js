@@ -8,53 +8,56 @@ const context = canvas?.getContext("2d");
 const characters = "01アイウエオカキクケコABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const fontSize = 16;
 let drops = [];
-let previousFrame = 0;
 
-function resizeMatrix() {
-  if (!canvas || !context) return;
+let matrixTimer;
 
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = window.innerWidth * ratio;
-  canvas.height = window.innerHeight * ratio;
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
-  context.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-  drops = Array.from(
-    { length: Math.ceil(window.innerWidth / fontSize) },
-    () => Math.random() * -60,
-  );
+function randomGlyph() {
+  return characters[Math.floor(Math.random() * characters.length)];
 }
 
-function drawMatrix(timestamp = 0) {
-  if (!canvas || !context || reducedMotion.matches) return;
+function resizeMatrix() {
+  if (!context) return;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+  canvas.width = Math.round(width * ratio);
+  canvas.height = Math.round(height * ratio);
+  context.setTransform(ratio, 0, 0, ratio, 0, 0);
+  context.font = `${fontSize}px ui-monospace, monospace`;
 
-  if (timestamp - previousFrame > 75) {
-    context.fillStyle = "rgba(4, 7, 6, 0.12)";
-    context.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    context.fillStyle = "#82f746";
-    context.font = `${fontSize}px ui-monospace, monospace`;
+  const rows = Math.ceil(height / fontSize);
+  drops = Array.from({ length: Math.ceil(width / fontSize) }, (_, col) => {
+    const head = Math.floor(Math.random() * (rows + 12)) - 8;
+    for (let tail = 6; tail >= 0; tail--) {
+      context.fillStyle = `rgba(130,247,70,${(7 - tail) / 9})`;
+      context.fillText(randomGlyph(), col * fontSize, (head - tail) * fontSize);
+    }
+    return head + 1;
+  });
+}
 
-    drops.forEach((position, index) => {
-      const character = characters[Math.floor(Math.random() * characters.length)];
-      context.fillText(character, index * fontSize, position * fontSize);
-      drops[index] =
-        position * fontSize > window.innerHeight && Math.random() > 0.975
-          ? 0
-          : position + 1;
-    });
+function drawMatrix() {
+  context.fillStyle = "rgba(4, 7, 6, 0.16)";
+  context.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  context.fillStyle = "#86f54f";
+  drops.forEach((row, col) => {
+    context.fillText(randomGlyph(), col * fontSize, row * fontSize);
+    drops[col] = row * fontSize > window.innerHeight ? -Math.floor(Math.random() * 25) : row + 1;
+  });
+}
 
-    previousFrame = timestamp;
+function syncMatrix() {
+  clearInterval(matrixTimer);
+  if (context && !document.hidden && !reducedMotion.matches) {
+    matrixTimer = setInterval(drawMatrix, 90);
   }
-
-  window.requestAnimationFrame(drawMatrix);
 }
 
 resizeMatrix();
-if (!reducedMotion.matches) {
-  window.requestAnimationFrame(drawMatrix);
-}
+syncMatrix();
 window.addEventListener("resize", resizeMatrix);
+document.addEventListener("visibilitychange", syncMatrix);
+reducedMotion.addEventListener("change", syncMatrix);
 
 /* Mobile navigation */
 const toggle = document.querySelector(".menu-toggle");
@@ -83,32 +86,34 @@ if (toggle && nav) {
   });
 }
 
-/* Only the seven requested page titles are revealed on scroll. */
-const animatedTitles = document.querySelectorAll(".title-animate");
+// Keep each heading's original reveal and bring its terminal prompt in with it.
+const titles = document.querySelectorAll(".title-animate");
+const panels = document.querySelectorAll([
+  ".instrument", ".about-copy", ".identity-card", ".role-card", ".highlights",
+  ".skill-card", ".project-card", ".certificate-feature", ".credential-card",
+  ".achievement-card", ".htb-profile-card", ".contact-terminal",
+].join(","));
 
-animatedTitles.forEach((title) => {
-  const delay = Number.parseInt(title.dataset.titleDelay || "0", 10);
-  title.style.setProperty("--title-delay", `${Number.isNaN(delay) ? 0 : delay}ms`);
-});
+function reveal(entry) {
+  if (entry.classList.contains("title-animate")) {
+    entry.classList.add("title-visible");
+    entry.closest("section").querySelector(".eyebrow").classList.add("prompt-visible");
+  } else {
+    entry.classList.add("panel-visible");
+  }
+}
 
-if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-  animatedTitles.forEach((title) => title.classList.add("title-visible"));
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      reveal(entry.target);
+      observer.unobserve(entry.target);
+    }
+  }, { rootMargin: "0px 0px 0px 0px", threshold: 0 });
+  for (const element of [...titles, ...panels]) observer.observe(element);
 } else {
-  const titleObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("title-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.2,
-      rootMargin: "0px 0px -10% 0px",
-    },
-  );
-
-  animatedTitles.forEach((title) => titleObserver.observe(title));
+  titles.forEach(reveal);
 }
 
 /* Active navigation state */
